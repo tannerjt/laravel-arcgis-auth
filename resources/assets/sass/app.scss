@@ -7,3 +7,7 @@
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+.text-danger {
+    color: $brand-danger;
+}

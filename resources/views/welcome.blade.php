@@ -7,6 +7,9 @@
 
         <title>{{ env('APP_NAME', 'Laravel')}}</title>
 
+        <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
@@ -71,24 +74,30 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('login') }}">Login With ArcGIS</a>
                     @endauth
                 </div>
             @endif
 
             <div class="content">
+                @if ($errors->any())
+                <div class="error-output">
+                    <span class="help-block">
+                        <strong class="text-danger">{{ $errors->first() }}</strong>
+                    </span>
+                </div>
+                @endif
                 <div class="title m-b-md">
-                    Laravel
+                    ArcGIS Login Example
                 </div>
 
-                <div class="links">
+                <!-- <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                </div> -->
             </div>
         </div>
     </body>

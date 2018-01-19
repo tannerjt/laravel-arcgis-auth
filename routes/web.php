@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Authentication Routes
+Route::get('/login', 'Auth\LoginController@redirectToProvider')->name('login');
+Route::get('/login/arcgis/callback', 'Auth\LoginController@handleProviderCallback');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::get('/home', 'HomeController@index')->name('home');

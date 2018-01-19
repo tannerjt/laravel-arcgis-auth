@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'arcgis' => [
+        'client_id' => env('ARCGIS_ID'),
+        'client_secret' => env('ARCGIS_SECRET'),
+        'redirect' => env('ARCGIS_REDIRECT_URI'),
+    ],
+
 ];
